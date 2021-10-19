@@ -10,6 +10,7 @@ import NotFound from './Pages/NotFound';
 import HandleChange from './Components/HandleChange';
 import CheckInputName from './Components/CheckInputName';
 import EntryCondition from './Components/EntryCondition';
+import GetUsermame from './Components/GetUserInfos';
 
 class App extends Component {
   constructor() {
@@ -21,6 +22,7 @@ class App extends Component {
     this.handleChange = HandleChange.bind(this);
     this.checkInputName = CheckInputName.bind(this);
     this.entryCondition = EntryCondition.bind(this);
+    this.getUsermame = GetUsermame.bind(this);
   }
 
   render() {
@@ -41,11 +43,33 @@ class App extends Component {
                 />)
               }
             />
-            <Route exact path="/search" component={ Search } />
-            <Route exact path="/album/:id" component={ Album } />
-            <Route exact path="/favorites" component={ Favorites } />
-            <Route exact path="/profile" component={ Profile } />
-            <Route exact path="/profile/edit" component={ ProfileEdit } />
+
+            <Route
+              exact
+              path="/search"
+              render={ () => (<Search { ...this } { ...this.state } />) }
+            />
+
+            <Route
+              path="/album/:id"
+              render={ () => (<Album { ...this } { ...this.state } />) }
+            />
+
+            <Route
+              path="/favorites"
+              render={ () => (<Favorites { ...this } { ...this.state } />) }
+            />
+
+            <Route
+              path="/profile"
+              render={ () => (<Profile { ...this } { ...this.state } />) }
+            />
+
+            <Route
+              path="/profile/edit"
+              render={ () => (<ProfileEdit { ...this } { ...this.state } />) }
+            />
+
             <Route component={ NotFound } />
 
           </Switch>
