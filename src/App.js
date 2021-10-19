@@ -7,8 +7,22 @@ import Favorites from './Pages/Favorites';
 import Profile from './Pages/Profile';
 import ProfileEdit from './Pages/ProfileEdit';
 import NotFound from './Pages/NotFound';
+import HandleChange from './Components/HandleChange';
+import CheckInputName from './Components/CheckInputName';
+import EntryCondition from './Components/EntryCondition';
 
 class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      LoginUser: '',
+      SubmitLogin: true,
+    };
+    this.handleChange = HandleChange.bind(this);
+    this.checkInputName = CheckInputName.bind(this);
+    this.entryCondition = EntryCondition.bind(this);
+  }
+
   render() {
     return (
       <>
@@ -16,7 +30,17 @@ class App extends Component {
 
         <BrowserRouter>
           <Switch>
-            <Route exact path="/" component={ Login } />
+            <Route
+              exact
+              path="/"
+              render={
+                (propsRouter) => (<Login
+                  { ...propsRouter } // para acessar o history
+                  { ...this.state }
+                  { ...this }
+                />)
+              }
+            />
             <Route exact path="/search" component={ Search } />
             <Route exact path="/album/:id" component={ Album } />
             <Route exact path="/favorites" component={ Favorites } />
