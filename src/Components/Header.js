@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 import Loading from '../Pages/LoadingMessage';
 
 class Header extends Component {
@@ -14,6 +15,11 @@ class Header extends Component {
     return (
       <header data-testid="header-component">
         { loading ? <Loading /> : renderizaName}
+        <nav>
+          <Link data-testid="link-to-search" to="/search">Pesquisa</Link>
+          <Link data-testid="link-to-favorites" to="/favorites">Favoritos</Link>
+          <Link data-testid="link-to-profile" to="/profile">Perfil</Link>
+        </nav>
       </header>
     );
   }
