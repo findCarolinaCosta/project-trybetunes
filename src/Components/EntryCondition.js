@@ -7,7 +7,7 @@ export default async function entryCondition(loginuser, history) {
   history.push('../search');
 }
 
-EntryCondition.propTypes = {
+entryCondition.propTypes = {
   history: PropTypes.shape({
     push: PropTypes.func,
   }).isRequired,
