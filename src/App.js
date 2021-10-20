@@ -18,6 +18,7 @@ class App extends Component {
     this.state = {
       LoginUser: '',
       SubmitLogin: true,
+      searchedvalue: '',
     };
     this.handleChange = HandleChange.bind(this);
     this.checkInputName = CheckInputName.bind(this);
