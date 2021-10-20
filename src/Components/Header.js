@@ -4,11 +4,6 @@ import { Link } from 'react-router-dom';
 import Loading from '../Pages/LoadingMessage';
 
 class Header extends Component {
-  componentDidMount() {
-    const { getUsermame } = this.props;
-    getUsermame();
-  }
-
   render() {
     const { username, loading } = this.props;
     const renderName = (<p data-testid="header-user-name">{ username }</p>);
@@ -33,7 +28,6 @@ Header.defaultProps = {
 Header.propTypes = {
   username: PropTypes.string,
   loading: PropTypes.bool,
-  getUsermame: PropTypes.func.isRequired,
 };
 
 export default Header;

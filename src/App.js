@@ -31,6 +31,10 @@ class App extends Component {
     this.getArtistInfos = getArtistInfos.bind(this);
   }
 
+  componentDidMount() {
+    this.getUsermame();
+  }
+
   render() {
     return (
       <>
