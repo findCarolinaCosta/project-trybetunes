@@ -11,19 +11,24 @@ import HandleChange from './Components/HandleChange';
 import CheckInputName from './Components/CheckInputName';
 import EntryCondition from './Components/EntryCondition';
 import GetUsermame from './Components/GetUserInfos';
+import RenderAlbuns from './Components/RenderAlbuns';
+import getArtistInfos from './Components/GetArtistInfos';
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
-      LoginUser: '',
-      SubmitLogin: true,
+      loginuser: '',
+      submitlogin: true,
       searchedvalue: '',
+      promiseresolve: false,
     };
     this.handleChange = HandleChange.bind(this);
     this.checkInputName = CheckInputName.bind(this);
     this.entryCondition = EntryCondition.bind(this);
     this.getUsermame = GetUsermame.bind(this);
+    this.renderAlbuns = RenderAlbuns.bind(this);
+    this.getArtistInfos = getArtistInfos.bind(this);
   }
 
   render() {

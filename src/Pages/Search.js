@@ -4,7 +4,7 @@ import Header from '../Components/Header';
 
 class Search extends Component {
   render() {
-    const { handleChange, searchedvalue } = this.props;
+    const { handleChange, searchedvalue, renderAlbuns, getArtistInfos } = this.props;
     let isDisabled = true;
     if (searchedvalue.length > 1) { isDisabled = false; }
 
@@ -24,11 +24,15 @@ class Search extends Component {
             data-testid="search-artist-button"
             type="button"
             disabled={ isDisabled }
+            onClick={ () => getArtistInfos(searchedvalue) }
           >
             Pesquisar
 
           </button>
         </form>
+        <section>
+          { renderAlbuns() }
+        </section>
       </div>
     );
   }
@@ -37,6 +41,8 @@ class Search extends Component {
 Search.propTypes = {
   searchedvalue: PropTypes.string.isRequired,
   handleChange: PropTypes.func.isRequired,
+  renderAlbuns: PropTypes.func.isRequired,
+  getArtistInfos: PropTypes.func.isRequired,
 };
 
 export default Search;
