@@ -4,9 +4,9 @@ import Loading from './LoadingMessage';
 
 class Login extends Component {
   render() {
-    const { LoginUser, SubmitLogin, handleChange,
+    const { loginuser, submitlogin, handleChange,
       checkInputName, entryCondition, history } = this.props;
-    if (SubmitLogin) {
+    if (submitlogin) {
       return (
         <div data-testid="page-login">
           <form>
@@ -16,10 +16,10 @@ class Login extends Component {
 
               <input
                 type="text"
-                name="LoginUser"
+                name="loginuser"
                 id="login-name-input"
                 data-testid="login-name-input"
-                value={ LoginUser }
+                value={ loginuser }
                 onChange={ handleChange }
               />
             </label>
@@ -28,7 +28,7 @@ class Login extends Component {
               type="submit"
               data-testid="login-submit-button"
               disabled={ checkInputName() }
-              onClick={ () => entryCondition(LoginUser, history) }
+              onClick={ () => entryCondition(loginuser, history) }
             >
               Enviar
 
@@ -42,8 +42,8 @@ class Login extends Component {
 }
 
 Login.propTypes = {
-  LoginUser: PropTypes.string.isRequired,
-  SubmitLogin: PropTypes.bool.isRequired,
+  loginuser: PropTypes.string.isRequired,
+  submitlogin: PropTypes.bool.isRequired,
   history: PropTypes.shape({
     push: PropTypes.func,
   }).isRequired,

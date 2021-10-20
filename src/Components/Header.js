@@ -11,10 +11,10 @@ class Header extends Component {
 
   render() {
     const { username, loading } = this.props;
-    const renderizaName = (<p data-testid="header-user-name">{ username }</p>);
+    const renderName = (<p data-testid="header-user-name">{ username }</p>);
     return (
       <header data-testid="header-component">
-        { loading ? <Loading /> : renderizaName}
+        { loading ? <Loading /> : renderName}
         <nav>
           <Link data-testid="link-to-search" to="/search">Pesquisa</Link>
           <Link data-testid="link-to-favorites" to="/favorites">Favoritos</Link>

@@ -7,11 +7,11 @@ import Favorites from './Pages/Favorites';
 import Profile from './Pages/Profile';
 import ProfileEdit from './Pages/ProfileEdit';
 import NotFound from './Pages/NotFound';
-import HandleChange from './Components/HandleChange';
-import CheckInputName from './Components/CheckInputName';
-import EntryCondition from './Components/EntryCondition';
-import GetUsermame from './Components/GetUserInfos';
-import RenderAlbuns from './Components/RenderAlbuns';
+import handleChange from './Components/HandleChange';
+import checkInputName from './Components/CheckInputName';
+import entryCondition from './Components/EntryCondition';
+import getUsermame from './Components/GetUserInfos';
+import renderAlbuns from './Components/RenderAlbuns';
 import getArtistInfos from './Components/GetArtistInfos';
 
 class App extends Component {
@@ -23,11 +23,11 @@ class App extends Component {
       searchedvalue: '',
       promiseresolve: false,
     };
-    this.handleChange = HandleChange.bind(this);
-    this.checkInputName = CheckInputName.bind(this);
-    this.entryCondition = EntryCondition.bind(this);
-    this.getUsermame = GetUsermame.bind(this);
-    this.renderAlbuns = RenderAlbuns.bind(this);
+    this.handleChange = handleChange.bind(this);
+    this.checkInputName = checkInputName.bind(this);
+    this.entryCondition = entryCondition.bind(this);
+    this.getUsermame = getUsermame.bind(this);
+    this.renderAlbuns = renderAlbuns.bind(this);
     this.getArtistInfos = getArtistInfos.bind(this);
   }
 

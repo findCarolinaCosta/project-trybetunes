@@ -1,9 +1,9 @@
 import PropTypes from 'prop-types';
 import { createUser } from '../services/userAPI';
 
-export default async function EntryCondition(LoginUser, history) {
-  this.setState({ SubmitLogin: false });
-  await createUser({ name: LoginUser });
+export default async function entryCondition(loginuser, history) {
+  this.setState({ submitlogin: false });
+  await createUser({ name: loginuser });
   history.push('../search');
 }
 
