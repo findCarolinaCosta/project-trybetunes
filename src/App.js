@@ -51,21 +51,25 @@ class App extends Component {
             />
 
             <Route
+              exact
               path="/album/:id"
               render={ () => (<Album { ...this } { ...this.state } />) }
             />
 
             <Route
+              exact
               path="/favorites"
               render={ () => (<Favorites { ...this } { ...this.state } />) }
             />
 
             <Route
+              exact
               path="/profile"
               render={ () => (<Profile { ...this } { ...this.state } />) }
             />
 
             <Route
+              exact
               path="/profile/edit"
               render={ () => (<ProfileEdit { ...this } { ...this.state } />) }
             />
