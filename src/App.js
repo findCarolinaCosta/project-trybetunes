@@ -13,6 +13,7 @@ import entryCondition from './Components/EntryCondition';
 import getUsermame from './Components/GetUserInfos';
 import renderAlbuns from './Components/RenderAlbuns';
 import getArtistInfos from './Components/GetArtistInfos';
+import getSongsListByAlbum from './Components/GetSongsListByAlbum';
 
 class App extends Component {
   constructor() {
@@ -22,6 +23,9 @@ class App extends Component {
       submitlogin: true,
       searchedvalue: '',
       promiseresolve: false,
+      artistName: '',
+      collectionName: '',
+      infosSongs: [],
     };
     this.handleChange = handleChange.bind(this);
     this.checkInputName = checkInputName.bind(this);
@@ -29,6 +33,7 @@ class App extends Component {
     this.getUsermame = getUsermame.bind(this);
     this.renderAlbuns = renderAlbuns.bind(this);
     this.getArtistInfos = getArtistInfos.bind(this);
+    this.getSongsListByAlbum = getSongsListByAlbum.bind(this);
   }
 
   componentDidMount() {
@@ -63,7 +68,7 @@ class App extends Component {
             <Route
               exact
               path="/album/:id"
-              render={ () => (<Album { ...this } { ...this.state } />) }
+              render={ (props) => (<Album { ...this } { ...this.state } { ...props } />) }
             />
 
             <Route
