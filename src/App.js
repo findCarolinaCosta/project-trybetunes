@@ -14,6 +14,7 @@ import getUsermame from './Components/GetUserInfos';
 import renderAlbuns from './Components/RenderAlbuns';
 import getArtistInfos from './Components/GetArtistInfos';
 import getSongsListByAlbum from './Components/GetSongsListByAlbum';
+import checkedFavorited from './Components/CheckedFavorited';
 
 class App extends Component {
   constructor() {
@@ -26,6 +27,7 @@ class App extends Component {
       artistName: '',
       collectionName: '',
       infosSongs: [],
+      loading: false,
     };
     this.handleChange = handleChange.bind(this);
     this.checkInputName = checkInputName.bind(this);
@@ -34,6 +36,7 @@ class App extends Component {
     this.renderAlbuns = renderAlbuns.bind(this);
     this.getArtistInfos = getArtistInfos.bind(this);
     this.getSongsListByAlbum = getSongsListByAlbum.bind(this);
+    this.checkedFavorited = checkedFavorited.bind(this);
   }
 
   componentDidMount() {

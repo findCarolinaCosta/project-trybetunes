@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Header from '../Components/Header';
+import MusicCard from '../Components/MusicCard';
 
 class Album extends Component {
   componentDidMount() {
@@ -19,19 +20,12 @@ class Album extends Component {
         { infosSongs.map((music, index) => {
           if (index > 0) {
             return (
-              <div key={ music.trackId }>
-                <p>{music.trackName}</p>
-                <audio
-                  data-testid="audio-component"
-                  key={ music.trackName }
-                  src={ music.previewUrl }
-                  controls
-                >
-                  <track kind="captions" />
-                  O seu navegador não suporta o elemento
-                  <code>audio</code>
-                </audio>
-              </div>
+              <MusicCard
+                trackId={ music.trackId }
+                trackName={ music.trackName }
+                previewUrl={ music.previewUrl }
+                { ...this.props }
+              />
             );
           }
           return null;
