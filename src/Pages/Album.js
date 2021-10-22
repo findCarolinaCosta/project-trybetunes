@@ -21,6 +21,7 @@ class Album extends Component {
           if (index > 0) {
             return (
               <MusicCard
+                key={ music.trackId }
                 trackId={ music.trackId }
                 trackName={ music.trackName }
                 previewUrl={ music.previewUrl }
@@ -40,6 +41,8 @@ Album.propTypes = {
   collectionName: PropTypes.string.isRequired,
   infosSongs: PropTypes.arrayOf(PropTypes.object).isRequired,
   getSongsListByAlbum: PropTypes.func.isRequired,
+  favorites: PropTypes.arrayOf(PropTypes.object).isRequired,
+  getFavoriteList: PropTypes.func.isRequired,
 };
 
 export default Album;

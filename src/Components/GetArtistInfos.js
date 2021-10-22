@@ -26,5 +26,4 @@ getArtistInfos.defaultProps = {
 getArtistInfos.propTypes = {
   username: PropTypes.string,
   loading: PropTypes.bool,
-  getUsermame: PropTypes.func.isRequired,
 };

@@ -22,7 +22,7 @@ class MusicCard extends Component {
             onChange={ (action) => (
               checkedFavorited({ ...this.props }, action)) }
             type="checkbox"
-            id={ `checkbox-music-${trackId}` }
+            id={ trackId }
             data-testid={ `checkbox-music-${trackId}` }
           />
           Favorita

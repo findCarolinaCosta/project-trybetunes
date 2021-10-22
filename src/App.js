@@ -30,6 +30,7 @@ class App extends Component {
       collectionName: '',
       infosSongs: [],
       loading: false,
+      favorites: [],
     };
     this.handleChange = handleChange.bind(this);
     this.checkInputName = checkInputName.bind(this);
@@ -51,8 +52,12 @@ class App extends Component {
   componentDidUpdate(_, previousState) {
     const { favorites } = this.state;
     if (previousState.favorites !== favorites) {
-      this.getFavoriteList(); // 2 não passa por causa dessa chamada
+      this.getFavoriteList(); // 2, 5 e 6 não passa por causa dessa chamada
     }
+  }
+
+  componentWillUnmount() {
+
   }
 
   render() {

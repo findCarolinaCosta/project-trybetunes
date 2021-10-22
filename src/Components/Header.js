@@ -21,7 +21,7 @@ class Header extends Component {
 }
 
 Header.defaultProps = {
-  username: '',
+  username: 'User Test',
   loading: true,
 };
 
