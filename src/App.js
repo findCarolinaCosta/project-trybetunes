@@ -14,8 +14,9 @@ import getUsermame from './Components/GetUserInfos';
 import renderAlbuns from './Components/RenderAlbuns';
 import getArtistInfos from './Components/GetArtistInfos';
 import getSongsListByAlbum from './Components/GetSongsListByAlbum';
-import { checkedFavorited, getFavoriteList } from './Components/CheckedFavorited';
+import checkedFavorited from './Components/CheckedFavorited';
 import recoverFavorites from './Components/RestoreFavoriteList';
+import getFavoriteList from './Components/GetFavoriteList';
 
 class App extends Component {
   constructor() {
@@ -47,7 +48,7 @@ class App extends Component {
     this.recoverFavorites({ ...this.props });
   }
 
-  componentDidUpdate(previousState) {
+  componentDidUpdate(_, previousState) {
     const { favorites } = this.state;
     if (previousState.favorites !== favorites) {
       this.getFavoriteList();
