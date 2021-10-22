@@ -51,7 +51,7 @@ class App extends Component {
   componentDidUpdate(_, previousState) {
     const { favorites } = this.state;
     if (previousState.favorites !== favorites) {
-      this.getFavoriteList();
+      this.getFavoriteList(); // 2 não passa por causa dessa chamada
     }
   }
 
