@@ -7,16 +7,16 @@ import Favorites from './Pages/Favorites';
 import Profile from './Pages/Profile';
 import ProfileEdit from './Pages/ProfileEdit';
 import NotFound from './Pages/NotFound';
-import handleChange from './Components/HandleChange';
-import checkInputName from './Components/CheckInputName';
-import entryCondition from './Components/EntryCondition';
-import getUsermame from './Components/GetUserInfos';
-import renderAlbuns from './Components/RenderAlbuns';
-import getArtistInfos from './Components/GetArtistInfos';
-import getSongsListByAlbum from './Components/GetSongsListByAlbum';
-import checkedFavorited from './Components/CheckedFavorited';
-import recoverFavorites from './Components/RestoreFavoriteList';
-import getFavoriteList from './Components/GetFavoriteList';
+import handleChange from './assets/HandleChange';
+import checkInputName from './assets/CheckInputName';
+import entryCondition from './assets/EntryCondition';
+import getUsermame from './assets/GetUserInfos';
+import renderAlbuns from './assets/RenderAlbuns';
+import getArtistInfos from './assets/GetArtistInfos';
+import getSongsListByAlbum from './assets/GetSongsListByAlbum';
+import checkedFavorited from './assets/CheckedFavorited';
+import recoverFavorites from './assets/RestoreFavoriteList';
+import getFavoriteList from './assets/GetFavoriteList';
 
 class App extends Component {
   constructor() {
