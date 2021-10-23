@@ -31,6 +31,7 @@ class App extends Component {
       infosSongs: [],
       loading: false,
       favorites: [],
+      redirect: false,
     };
     this.handleChange = handleChange.bind(this);
     this.checkInputName = checkInputName.bind(this);
@@ -52,7 +53,7 @@ class App extends Component {
   componentDidUpdate(_, previousState) {
     const { favorites } = this.state;
     if (previousState.favorites !== favorites) {
-      this.getFavoriteList(); // 2, 5 e 6 não passa por causa dessa chamada
+      this.getFavoriteList();
     }
   }
 
@@ -71,11 +72,7 @@ class App extends Component {
               exact
               path="/"
               render={
-                (propsRouter) => (<Login
-                  { ...propsRouter } // para acessar o history
-                  { ...this.state }
-                  { ...this }
-                />)
+                () => (<Login { ...this.state } { ...this } />)
               }
             />
 

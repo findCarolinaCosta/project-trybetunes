@@ -1,11 +1,17 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { Redirect } from 'react-router-dom';
 import Loading from './LoadingMessage';
 
 class Login extends Component {
   render() {
     const { loginuser, submitlogin, handleChange,
-      checkInputName, entryCondition, history } = this.props;
+      checkInputName, entryCondition, redirect } = this.props;
+
+    if (redirect) {
+      return <Redirect to="/search" />;
+    }
+
     if (submitlogin) {
       return (
         <div data-testid="page-login">
@@ -28,7 +34,7 @@ class Login extends Component {
               type="submit"
               data-testid="login-submit-button"
               disabled={ checkInputName() }
-              onClick={ () => entryCondition(loginuser, history) }
+              onClick={ () => entryCondition(loginuser) }
             >
               Enviar
 
@@ -44,12 +50,10 @@ class Login extends Component {
 Login.propTypes = {
   loginuser: PropTypes.string.isRequired,
   submitlogin: PropTypes.bool.isRequired,
-  history: PropTypes.shape({
-    push: PropTypes.func,
-  }).isRequired,
   handleChange: PropTypes.func.isRequired,
   checkInputName: PropTypes.func.isRequired,
   entryCondition: PropTypes.func.isRequired,
+  redirect: PropTypes.bool.isRequired,
 };
 
 export default Login;
