@@ -22,6 +22,27 @@ body {
     margin: 0 0 0 2rem !important;
   }
 
+  .input-search {
+    width: 43% !important;
+  }
+
+  .btn2 {
+    outline: none;
+    color: #fa243c !important;
+  }
+
+  .btn2:hover {
+    color: white !important;
+    background-color: #fa243c !important;
+  }
+
+  .btn2-active {
+    background-color: #fa243c !important;
+    color: white !important;
+  }
+
+
+
   .container-login {
     background-color: rgba(0, 0, 0, 0.096);
   }

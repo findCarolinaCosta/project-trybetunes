@@ -65,11 +65,7 @@ class App extends Component {
 
   render() {
     return (
-      <>
-        <header className="w-full p-3 header fixed">
-          <p className="font-bold text-2xl text-white p-2 logo-title">TrybeTunes</p>
-        </header>
-
+      <div>
         <BrowserRouter>
           <Switch>
             <Route
@@ -115,7 +111,7 @@ class App extends Component {
           </Switch>
         </BrowserRouter>
 
-      </>
+      </div>
     );
   }
 }

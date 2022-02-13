@@ -9,9 +9,9 @@ class Search extends Component {
     if (searchedvalue.length > 1) { isDisabled = false; }
 
     return (
-      <div data-testid="page-search">
+      <div data-testid="page-search" className="container-fluid p-0">
         <Header { ...this.props } { ...this } />
-        <form>
+        <form className="flex gap-4 justify-center">
           <input
             data-testid="search-artist-input"
             type="text"
@@ -19,15 +19,16 @@ class Search extends Component {
             placeholder="Digite um nome de artista ou banda"
             value={ searchedvalue }
             onChange={ handleChange }
+            className="form-control form-control-sm rounded-3xl input-search"
           />
           <button
             data-testid="search-artist-button"
             type="button"
             disabled={ isDisabled }
             onClick={ () => getArtistInfos(searchedvalue) }
+            className="btn btn-primary"
           >
             Pesquisar
-
           </button>
         </form>
         <section>
