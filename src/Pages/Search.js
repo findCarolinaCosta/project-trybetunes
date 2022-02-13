@@ -23,14 +23,15 @@ class Search extends Component {
             placeholder="search"
             value={ searchedvalue }
             onChange={ handleChange }
-            className="form-control form-control-sm rounded-3xl input-search"
+            className="form-control
+            form-control-sm rounded-3xl input-search"
           />
           <button
             data-testid="search-artist-button"
             type="submit"
             disabled={ isDisabled }
             onClick={ () => getArtistInfos(searchedvalue) }
-            className="btn btn-primary"
+            className="d-none d-sm-block btn btn-primary"
           >
             Pesquisar
           </button>

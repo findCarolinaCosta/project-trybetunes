@@ -23,7 +23,7 @@ body {
   }
 
   .input-search {
-    width: 43% !important;
+    width: 78% !important;
   }
 
   .btn2 {
@@ -119,6 +119,12 @@ body {
 
     &::-webkit-input-placeholder {
       color: #C7C7C7;
+    }
+  }
+
+  @media screen and (min-width: 641px) {
+    .input-search {
+      width: 43% !important;
     }
   }
 }

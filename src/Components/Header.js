@@ -18,7 +18,7 @@ function Header(props) {
           : (
             <p
               data-testid="header-user-name"
-              className="text-white"
+              className="text-white align-middle m-0 self-center"
             >
               { username }
             </p>)}
