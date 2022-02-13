@@ -9,8 +9,12 @@ export default function renderAlbuns() {
   if (promiseresolve) {
     return (
       <>
-        <h1>{`Resultado de álbuns de: ${artistsearched}`}</h1>
-        <div>
+        <h1
+          className="font-bold text-2xl p-4"
+        >
+          {`Resultado de álbuns de: ${artistsearched}`}
+        </h1>
+        <div className="container-cards w-full">
           {
             albuminfos.map((album) => (
               <Cards key={ album.collectionId } albumObject={ album } />))

@@ -9,21 +9,25 @@ class Search extends Component {
     if (searchedvalue.length > 1) { isDisabled = false; }
 
     return (
-      <div data-testid="page-search" className="container-fluid p-0">
+      <div
+        data-testid="page-search"
+        className="container-fluid p-0 w-screen"
+        onSubmit={ (e) => e.preventDefault() }
+      >
         <Header { ...this.props } { ...this } />
-        <form className="flex gap-4 justify-center">
+        <form className="flex gap-4 justify-center container_form">
           <input
             data-testid="search-artist-input"
             type="text"
             name="searchedvalue"
-            placeholder="Digite um nome de artista ou banda"
+            placeholder="search"
             value={ searchedvalue }
             onChange={ handleChange }
             className="form-control form-control-sm rounded-3xl input-search"
           />
           <button
             data-testid="search-artist-button"
-            type="button"
+            type="submit"
             disabled={ isDisabled }
             onClick={ () => getArtistInfos(searchedvalue) }
             className="btn btn-primary"
@@ -31,7 +35,7 @@ class Search extends Component {
             Pesquisar
           </button>
         </form>
-        <section>
+        <section className="w-screen">
           { renderAlbuns() }
         </section>
       </div>

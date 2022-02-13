@@ -3,7 +3,9 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import Loading from '../Pages/LoadingMessage';
 
-function Header({ username, loading }) {
+function Header(props) {
+  const { username, loading, location: { pathname } } = props;
+  const selectBackground = 'btn2-active';
   return (
     <header
       data-testid="header-component"
@@ -19,15 +21,14 @@ function Header({ username, loading }) {
               className="text-white"
             >
               { username }
-
             </p>)}
       </div>
       <nav className="grid grid-cols-3 pb-3">
         <Link
           data-testid="link-to-search"
           to="/search"
-          className="btn2
-          p-3 text-center"
+          className={ `btn2
+          p-3 text-center ${pathname === '/search' && selectBackground}` }
         >
           <button
             type="button"
@@ -38,8 +39,8 @@ function Header({ username, loading }) {
         <Link
           data-testid="link-to-favorites"
           to="/favorites"
-          className="btn2
-          p-3 text-center"
+          className={ `btn2
+          p-3 text-center ${pathname === '/favorites' && selectBackground}` }
         >
 
           <button
@@ -51,8 +52,8 @@ function Header({ username, loading }) {
         <Link
           data-testid="link-to-profile"
           to="/profile"
-          className="btn2
-          p-3 text-center"
+          className={ `btn2
+          p-3 text-center ${pathname === '/profile' && selectBackground}` }
         >
           <button
             type="button"
@@ -68,11 +69,13 @@ function Header({ username, loading }) {
 Header.defaultProps = {
   username: 'User Test',
   loading: true,
+  location: { pathname: '/search' },
 };
 
 Header.propTypes = {
-  username: PropTypes.string,
   loading: PropTypes.bool,
+  username: PropTypes.string,
+  location: PropTypes.objectOf(PropTypes.string),
 };
 
 export default Header;

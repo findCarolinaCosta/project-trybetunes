@@ -79,7 +79,11 @@ class App extends Component {
             <Route
               exact
               path="/search"
-              render={ () => (<Search { ...this } { ...this.state } />) }
+              render={ (props) => (<Search
+                { ...this }
+                { ...this.state }
+                { ...props }
+              />) }
             />
 
             <Route
@@ -91,13 +95,21 @@ class App extends Component {
             <Route
               exact
               path="/favorites"
-              render={ () => (<Favorites { ...this } { ...this.state } />) }
+              render={ (props) => (<Favorites
+                { ...this }
+                { ...this.state }
+                { ...props }
+              />) }
             />
 
             <Route
               exact
               path="/profile"
-              render={ () => (<Profile { ...this } { ...this.state } />) }
+              render={ (props) => (<Profile
+                { ...this }
+                { ...this.state }
+                { ...props }
+              />) }
             />
 
             <Route
