@@ -1,3 +1,48 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+body {
+  background-color: rgba(255,255,255,0.92);
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  margin: 0;
+  padding: 0;
+
+  h1, p {
+    color: #1d1d1f;
+  }
+  
+  .header {
+    background-color: rgba(0, 0, 0, 0.92);
+    color: rgba(255,255,255,0.92);
+  }
+
+  .logo-title {
+    margin: 0 0 0 2rem !important;
+  }
+
+  .container-login {
+    background-color: rgba(0, 0, 0, 0.096);
+  }
+
+  .btn-primary {
+    background-color: #fa243c !important;
+    border: solid 1px #ff566a;
+  }
+
+  .btn-primary:hover {
+    color: #ffb8c1;
+    border: solid 1px #ff566a;
+  }
+
+  .btn-primary:disabled {
+    background-color: #fd3f55 !important;
+    border: solid 1px #fd3f55;
+  }
+
+  .form-control-sm:focus {
+    border-color: rgba(250 36 60 / 25%);
+    box-shadow: 0 0 0 0.25rem rgba(250 36 60 / 25%);
+  }
+}

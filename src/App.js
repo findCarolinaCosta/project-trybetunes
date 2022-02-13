@@ -17,6 +17,8 @@ import getSongsListByAlbum from './assets/GetSongsListByAlbum';
 import checkedFavorited from './assets/CheckedFavorited';
 import recoverFavorites from './assets/RestoreFavoriteList';
 import getFavoriteList from './assets/GetFavoriteList';
+import './App.scss';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 class App extends Component {
   constructor() {
@@ -64,7 +66,9 @@ class App extends Component {
   render() {
     return (
       <>
-        <p>TrybeTunes</p>
+        <header className="w-full p-3 header fixed">
+          <p className="font-bold text-2xl text-white p-2 logo-title">TrybeTunes</p>
+        </header>
 
         <BrowserRouter>
           <Switch>
