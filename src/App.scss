@@ -122,6 +122,27 @@ body {
     }
   }
 
+  .container-songs {
+    display: grid;
+    grid-template-columns: 1fr 5fr 1fr 1fr;
+    grid-template-rows: 1fr;
+  }
+
+  .icon-audio {
+    width: 29.86px;
+    height: 29.86px;
+  }
+
+  .border-r-2 {
+    height: 168% !important;
+  }
+
+  .filled-instance {
+    stroke: #fa243c;
+    stroke-width: 5px;
+    fill: lighten(#fa243c, 20%);
+  }
+
   @media screen and (min-width: 641px) {
     .input-search {
       width: 43% !important;
