@@ -2,8 +2,8 @@ import React from 'react';
 import Loading from '../Pages/LoadingMessage';
 import { addSong, removeSong } from '../services/favoriteSongsAPI';
 
-export default async function checkedFavorited(Props, { target }) {
-  const { trackId, trackName, previewUrl, loading } = Props;
+export default async function checkedFavorited(Props, { target }, previewUrl) {
+  const { trackId, trackName, loading } = Props;
   const trackInfo = { previewUrl, trackName, trackId };
 
   this.setState({ loading: true });

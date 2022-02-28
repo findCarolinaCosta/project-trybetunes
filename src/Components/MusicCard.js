@@ -36,7 +36,7 @@ function MusicCard(props) {
       <label htmlFor={ `checkbox-music-${trackId}` } className="text-center">
         <input
           onChange={ (action) => (
-            checkedFavorited(props, action)) }
+            checkedFavorited(props, action, previewUrl)) }
           type="checkbox"
           id={ trackId }
           data-testid={ `checkbox-music-${trackId}` }
