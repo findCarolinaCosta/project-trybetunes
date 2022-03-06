@@ -1,11 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 import Loading from '../Pages/LoadingMessage';
 
 function Header(props) {
-  const { username, loading, location: { pathname } } = props;
+  const { loading, location: { pathname } } = props;
   const selectBackground = 'btn2-active';
+  const username = useSelector((state) => state.login.user);
+  const user = localStorage.getItem('user');
+
   return (
     <header
       data-testid="header-component"
@@ -20,7 +24,7 @@ function Header(props) {
               data-testid="header-user-name"
               className="text-white align-middle m-0 self-center"
             >
-              { username }
+              { username || JSON.parse(user).name || 'User Test' }
             </p>)}
       </div>
       <nav className="grid grid-cols-3 pb-3">
@@ -67,14 +71,12 @@ function Header(props) {
 }
 
 Header.defaultProps = {
-  username: 'User Test',
   loading: true,
   location: { pathname: '/search' },
 };
 
 Header.propTypes = {
   loading: PropTypes.bool,
-  username: PropTypes.string,
   location: PropTypes.objectOf(PropTypes.string),
 };
 
