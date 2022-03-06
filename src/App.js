@@ -7,9 +7,6 @@ import Favorites from './Pages/Favorites';
 import Profile from './Pages/Profile';
 import ProfileEdit from './Pages/ProfileEdit';
 import NotFound from './Pages/NotFound';
-import handleChange from './assets/HandleChange';
-// import checkInputName from './assets/CheckInputName';
-// import entryCondition from './assets/EntryCondition';
 import getUsermame from './assets/GetUserInfos';
 import renderAlbuns from './assets/RenderAlbuns';
 import getArtistInfos from './assets/GetArtistInfos';
@@ -35,9 +32,7 @@ class App extends Component {
       favorites: [],
       redirect: false,
     };
-    this.handleChange = handleChange.bind(this);
-    // this.checkInputName = checkInputName.bind(this);
-    // this.entryCondition = entryCondition.bind(this);
+
     this.getUsermame = getUsermame.bind(this);
     this.renderAlbuns = renderAlbuns.bind(this);
     this.getArtistInfos = getArtistInfos.bind(this);

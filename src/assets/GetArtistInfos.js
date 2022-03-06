@@ -19,11 +19,9 @@ export default async function getArtistInfos(name) {
 }
 
 getArtistInfos.defaultProps = {
-  username: '',
   loading: true,
 };
 
 getArtistInfos.propTypes = {
-  username: PropTypes.string,
   loading: PropTypes.bool,
 };
