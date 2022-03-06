@@ -1,9 +1,8 @@
 import React from 'react';
-import { PropTypes } from 'prop-types';
 import Loading from '../Pages/LoadingMessage';
 import searchAlbumsAPI from '../services/searchAlbumsAPI';
 
-export default async function getArtistInfos(name) {
+async function getArtistInfos(name) {
   const { loading } = this.state;
   const consultApi = async () => {
     const arrayAlbuns = await searchAlbumsAPI(name);
@@ -12,16 +11,9 @@ export default async function getArtistInfos(name) {
       loading: false,
       searchedvalue: '',
       albuminfos: arrayAlbuns,
-      artistsearched: name,
     });
   };
   return loading ? <Loading /> : consultApi();
 }
 
-getArtistInfos.defaultProps = {
-  loading: true,
-};
-
-getArtistInfos.propTypes = {
-  loading: PropTypes.bool,
-};
+export default getArtistInfos;

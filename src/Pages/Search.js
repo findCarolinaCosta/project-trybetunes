@@ -6,6 +6,7 @@ function Search(props) {
   const { renderAlbuns, getArtistInfos } = props;
   const [searchValue, setSearchValue] = useState('');
   let isDisabled = true;
+
   if (searchValue.length > 1) { isDisabled = false; }
 
   return (
@@ -37,7 +38,7 @@ function Search(props) {
         </button>
       </form>
       <section className="w-screen">
-        { renderAlbuns() }
+        { renderAlbuns(searchValue) }
       </section>
     </div>
   );
