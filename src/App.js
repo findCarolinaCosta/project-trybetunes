@@ -8,7 +8,6 @@ import Profile from './Pages/Profile';
 import ProfileEdit from './Pages/ProfileEdit';
 import NotFound from './Pages/NotFound';
 import getUsermame from './assets/GetUserInfos';
-import renderAlbuns from './assets/RenderAlbuns';
 import getArtistInfos from './assets/GetArtistInfos';
 import getSongsListByAlbum from './assets/GetSongsListByAlbum';
 import checkedFavorited from './assets/CheckedFavorited';
@@ -16,6 +15,7 @@ import recoverFavorites from './assets/RestoreFavoriteList';
 import getFavoriteList from './assets/GetFavoriteList';
 import './App.scss';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { Provider } from './context/album';
 
 class App extends Component {
   constructor() {
@@ -34,7 +34,6 @@ class App extends Component {
     };
 
     this.getUsermame = getUsermame.bind(this);
-    this.renderAlbuns = renderAlbuns.bind(this);
     this.getArtistInfos = getArtistInfos.bind(this);
     this.getSongsListByAlbum = getSongsListByAlbum.bind(this);
     this.checkedFavorited = checkedFavorited.bind(this);
@@ -54,10 +53,6 @@ class App extends Component {
     }
   }
 
-  componentWillUnmount() {
-
-  }
-
   render() {
     return (
       <Switch>
@@ -67,15 +62,13 @@ class App extends Component {
           component={ Login }
         />
 
-        <Route
-          exact
-          path="/search"
-          render={ (props) => (<Search
-            { ...this }
-            { ...this.state }
-            { ...props }
-          />) }
-        />
+        <Provider>
+          <Route
+            exact
+            path="/search"
+            component={ Search }
+          />
+        </Provider>
 
         <Route
           exact

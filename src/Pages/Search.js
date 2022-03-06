@@ -1,13 +1,26 @@
-import React, { useState } from 'react';
-import PropTypes from 'prop-types';
+import React, { useContext, useState } from 'react';
 import Header from '../Components/Header';
+import getArtistInfos from '../assets/GetArtistInfos';
+import Loading from './LoadingMessage';
+import RenderAlbuns from '../Components/RenderAlbuns';
+import { AlbumContext } from '../context/album';
 
 function Search(props) {
-  const { renderAlbuns, getArtistInfos } = props;
-  const [searchValue, setSearchValue] = useState('');
+  const { searchValue, setPromiseResolve,
+    setAlbumList, setSearchValue } = useContext(AlbumContext);
+
+  const [isloading, setIsLoading] = useState(false);
   let isDisabled = true;
 
   if (searchValue.length > 1) { isDisabled = false; }
+
+  const handleClick = async () => {
+    setIsLoading(true);
+    const list = await getArtistInfos(searchValue);
+    setPromiseResolve(true);
+    setIsLoading(false);
+    setAlbumList(list);
+  };
 
   return (
     <div
@@ -31,22 +44,18 @@ function Search(props) {
           data-testid="search-artist-button"
           type="submit"
           disabled={ isDisabled }
-          onClick={ () => getArtistInfos(searchValue) }
+          onClick={ handleClick }
           className="d-none d-sm-block btn btn-primary"
         >
           Pesquisar
         </button>
       </form>
       <section className="w-screen">
-        { renderAlbuns(searchValue) }
+        { isloading ? <Loading />
+          : <RenderAlbuns /> }
       </section>
     </div>
   );
 }
-
-Search.propTypes = {
-  renderAlbuns: PropTypes.func.isRequired,
-  getArtistInfos: PropTypes.func.isRequired,
-};
 
 export default Search;
