@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import Login from './Pages/Login';
 import Search from './Pages/Search';
 import Album from './Pages/Album';
@@ -8,8 +8,8 @@ import Profile from './Pages/Profile';
 import ProfileEdit from './Pages/ProfileEdit';
 import NotFound from './Pages/NotFound';
 import handleChange from './assets/HandleChange';
-import checkInputName from './assets/CheckInputName';
-import entryCondition from './assets/EntryCondition';
+// import checkInputName from './assets/CheckInputName';
+// import entryCondition from './assets/EntryCondition';
 import getUsermame from './assets/GetUserInfos';
 import renderAlbuns from './assets/RenderAlbuns';
 import getArtistInfos from './assets/GetArtistInfos';
@@ -36,8 +36,8 @@ class App extends Component {
       redirect: false,
     };
     this.handleChange = handleChange.bind(this);
-    this.checkInputName = checkInputName.bind(this);
-    this.entryCondition = entryCondition.bind(this);
+    // this.checkInputName = checkInputName.bind(this);
+    // this.entryCondition = entryCondition.bind(this);
     this.getUsermame = getUsermame.bind(this);
     this.renderAlbuns = renderAlbuns.bind(this);
     this.getArtistInfos = getArtistInfos.bind(this);
@@ -65,65 +65,58 @@ class App extends Component {
 
   render() {
     return (
-      <div>
-        <BrowserRouter>
-          <Switch>
-            <Route
-              exact
-              path="/"
-              render={
-                () => (<Login { ...this.state } { ...this } />)
-              }
-            />
+      <Switch>
+        <Route
+          exact
+          path="/"
+          component={ Login }
+        />
 
-            <Route
-              exact
-              path="/search"
-              render={ (props) => (<Search
-                { ...this }
-                { ...this.state }
-                { ...props }
-              />) }
-            />
+        <Route
+          exact
+          path="/search"
+          render={ (props) => (<Search
+            { ...this }
+            { ...this.state }
+            { ...props }
+          />) }
+        />
 
-            <Route
-              exact
-              path="/album/:id"
-              render={ (props) => (<Album { ...this } { ...this.state } { ...props } />) }
-            />
+        <Route
+          exact
+          path="/album/:id"
+          render={ (props) => (<Album { ...this } { ...this.state } { ...props } />) }
+        />
 
-            <Route
-              exact
-              path="/favorites"
-              render={ (props) => (<Favorites
-                { ...this }
-                { ...this.state }
-                { ...props }
-              />) }
-            />
+        <Route
+          exact
+          path="/favorites"
+          render={ (props) => (<Favorites
+            { ...this }
+            { ...this.state }
+            { ...props }
+          />) }
+        />
 
-            <Route
-              exact
-              path="/profile"
-              render={ (props) => (<Profile
-                { ...this }
-                { ...this.state }
-                { ...props }
-              />) }
-            />
+        <Route
+          exact
+          path="/profile"
+          render={ (props) => (<Profile
+            { ...this }
+            { ...this.state }
+            { ...props }
+          />) }
+        />
 
-            <Route
-              exact
-              path="/profile/edit"
-              render={ () => (<ProfileEdit { ...this } { ...this.state } />) }
-            />
+        <Route
+          exact
+          path="/profile/edit"
+          render={ () => (<ProfileEdit { ...this } { ...this.state } />) }
+        />
 
-            <Route component={ NotFound } />
+        <Route component={ NotFound } />
 
-          </Switch>
-        </BrowserRouter>
-
-      </div>
+      </Switch>
     );
   }
 }
