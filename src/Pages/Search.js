@@ -1,13 +1,16 @@
 import React, { useContext, useState } from 'react';
+import { useDispatch } from 'react-redux';
 import Header from '../Components/Header';
 import getArtistInfos from '../assets/GetArtistInfos';
 import Loading from './LoadingMessage';
 import RenderAlbuns from '../Components/RenderAlbuns';
 import { AlbumContext } from '../context/album';
+import { getSearchValue } from '../redux/actions';
 
 function Search(props) {
   const { searchValue, setPromiseResolve,
     setAlbumList, setSearchValue } = useContext(AlbumContext);
+  const dispatch = useDispatch();
 
   const [isloading, setIsLoading] = useState(false);
   let isDisabled = true;
@@ -20,6 +23,7 @@ function Search(props) {
     setPromiseResolve(true);
     setIsLoading(false);
     setAlbumList(list);
+    dispatch(getSearchValue({ name: searchValue }));
   };
 
   return (

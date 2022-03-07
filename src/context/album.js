@@ -23,7 +23,7 @@ function AlbumInfos(props) {
 }
 
 AlbumInfos.propTypes = {
-  // children: PropTypes.objectOf().isRequired,
+  children: PropTypes.shape().isRequired,
 };
 
 export { AlbumInfos as Provider, Consumer, AlbumContext };
