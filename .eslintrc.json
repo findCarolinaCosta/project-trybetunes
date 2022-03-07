@@ -13,7 +13,8 @@
     },
     "plugins": ["react"],
     "rules": {
-      "react/jsx-max-depth" : 0
+      "react/jsx-max-depth" : 0,
+      "sonarjs/cognitive-complexity": ["error", 50]
     }
   }
   
