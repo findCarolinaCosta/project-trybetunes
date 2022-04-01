@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/project-trybetunes/static/css/main.0564bd40.chunk.css",
+    "main.js": "/project-trybetunes/static/js/main.0e172018.chunk.js",
+    "main.js.map": "/project-trybetunes/static/js/main.0e172018.chunk.js.map",
+    "runtime-main.js": "/project-trybetunes/static/js/runtime-main.bac37bb2.js",
+    "runtime-main.js.map": "/project-trybetunes/static/js/runtime-main.bac37bb2.js.map",
+    "static/css/2.0a9ec390.chunk.css": "/project-trybetunes/static/css/2.0a9ec390.chunk.css",
+    "static/js/2.a45da2ea.chunk.js": "/project-trybetunes/static/js/2.a45da2ea.chunk.js",
+    "static/js/2.a45da2ea.chunk.js.map": "/project-trybetunes/static/js/2.a45da2ea.chunk.js.map",
+    "index.html": "/project-trybetunes/index.html",
+    "static/css/2.0a9ec390.chunk.css.map": "/project-trybetunes/static/css/2.0a9ec390.chunk.css.map",
+    "static/css/main.0564bd40.chunk.css.map": "/project-trybetunes/static/css/main.0564bd40.chunk.css.map",
+    "static/js/2.a45da2ea.chunk.js.LICENSE.txt": "/project-trybetunes/static/js/2.a45da2ea.chunk.js.LICENSE.txt",
+    "static/media/play.65864fd4.svg": "/project-trybetunes/static/media/play.65864fd4.svg",
+    "static/media/profile-icon.fb20c290.svg": "/project-trybetunes/static/media/profile-icon.fb20c290.svg",
+    "static/media/App.scss": "/project-trybetunes/static/media/search.f6e35f73.svg",
+    "static/media/stop.1e0abca2.svg": "/project-trybetunes/static/media/stop.1e0abca2.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.bac37bb2.js",
+    "static/css/2.0a9ec390.chunk.css",
+    "static/js/2.a45da2ea.chunk.js",
+    "static/css/main.0564bd40.chunk.css",
+    "static/js/main.0e172018.chunk.js"
+  ]
+}
