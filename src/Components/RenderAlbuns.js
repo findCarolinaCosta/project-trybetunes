@@ -1,9 +1,9 @@
 import React, { useContext } from 'react';
-import { AlbumContext } from '../context/album';
+import { Context } from '../context/ContextInfos';
 import Cards from './Cards';
 
 export default function RenderAlbuns() {
-  const { searchValue, promiseResolve, albumList } = useContext(AlbumContext);
+  const { searchValue, promiseResolve, albumList } = useContext(Context);
   if (promiseResolve && albumList.length === 0) {
     return <p>Nenhum álbum foi encontrado</p>;
   }

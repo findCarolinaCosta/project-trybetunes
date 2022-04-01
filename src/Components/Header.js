@@ -24,7 +24,7 @@ function Header(props) {
               data-testid="header-user-name"
               className="text-white align-middle m-0 self-center"
             >
-              { username || JSON.parse(user).name || 'User Test' }
+              { username || JSON.parse(user).userName || 'User Test' }
             </p>)}
       </div>
       <nav className="grid grid-cols-3 pb-3">

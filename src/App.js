@@ -13,7 +13,7 @@ import recoverFavorites from './assets/RestoreFavoriteList';
 import getFavoriteList from './assets/GetFavoriteList';
 import './App.scss';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Provider } from './context/album';
+import { Provider } from './context/ContextInfos';
 
 class App extends Component {
   constructor() {
@@ -86,7 +86,7 @@ class App extends Component {
           <Route
             exact
             path="/profile/edit"
-            render={ () => (<ProfileEdit { ...this } { ...this.state } />) }
+            component={ ProfileEdit }
           />
 
           <Route component={ NotFound } />

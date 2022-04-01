@@ -1,13 +1,14 @@
 import PropTypes from 'prop-types';
 import React, { createContext, useState } from 'react';
 
-const AlbumContext = createContext();
-const { Provider, Consumer } = AlbumContext;
+const Context = createContext();
+const { Provider, Consumer } = Context;
 
-function AlbumInfos(props) {
+function ContextInfos(props) {
   const [promiseResolve, setPromiseResolve] = useState(false);
   const [albumList, setAlbumList] = useState([]);
   const [searchValue, setSearchValue] = useState('');
+  const [user, setUser] = useState({});
 
   const context = {
     promiseResolve,
@@ -16,14 +17,16 @@ function AlbumInfos(props) {
     setAlbumList,
     searchValue,
     setSearchValue,
+    user,
+    setUser,
   };
 
   const { children } = props;
   return <Provider value={ context }>{children}</Provider>;
 }
 
-AlbumInfos.propTypes = {
+ContextInfos.propTypes = {
   children: PropTypes.shape().isRequired,
 };
 
-export { AlbumInfos as Provider, Consumer, AlbumContext };
+export { ContextInfos as Provider, Consumer, Context };
