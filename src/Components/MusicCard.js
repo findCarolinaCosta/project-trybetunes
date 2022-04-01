@@ -10,7 +10,7 @@ function MusicCard({ param }) {
   const [isPlay, setIsPlay] = useState(false);
   const [loading, setLoading] = useState(false);
   const infosSongs = useSelector((state) => state.album.songInfos);
-  const [url, setUrl] = useState('second');
+  const [url, setUrl] = useState('');
   const audio = useMemo(() => new Audio(url), [url]);
   const favoritesList = JSON.parse(localStorage.getItem('favorite_songs'));
 
@@ -19,10 +19,11 @@ function MusicCard({ param }) {
   [audio, isPlay]);
 
   const handlePlay = (previewUrl) => {
+    if (isPlay) {
+      audio.pause();
+    }
     setUrl(previewUrl);
     setIsPlay(!isPlay);
-    return isPlay ? audio.play()
-      : audio.pause();
   };
 
   return (!param ? !infosSongs : !favoritesList)
