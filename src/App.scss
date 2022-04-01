@@ -1,0 +1,151 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+body {
+  background-color: rgba(255,255,255,0.92);
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  margin: 0;
+  padding: 0;
+
+  h1, p {
+    color: #1d1d1f;
+  }
+  
+  .header {
+    background-color: rgba(0, 0, 0, 0.92);
+    color: rgba(255,255,255,0.92);
+  }
+
+  .logo-title {
+    margin: 0 0 0 2rem !important;
+  }
+
+  .input-search {
+    width: 78% !important;
+  }
+
+  .btn2 {
+    outline: none;
+    color: #fa243c !important;
+
+    &:hover {
+      color: white !important;
+      background-color: #fa243c !important;
+    }
+  }
+
+  .btn2-active {
+    background-color: #fa243c !important;
+    color: white !important;
+  }
+
+  .container-login {
+    background-color: rgba(0, 0, 0, 0.096);
+  }
+
+  .btn-primary {
+    background-color: #fa243c !important;
+    border: solid 1px #ff566a;
+
+    &:hover {
+      color: #ffb8c1;
+      border: solid 1px #ff566a;
+    }
+
+    &:disabled {
+      background-color: #fd3f55 !important;
+    border: solid 1px #fd3f55;
+    }
+  }
+
+  .form-control-sm {
+    &:focus {
+      border-color: rgba(250 36 60 / 25%);
+      box-shadow: 0 0 0 0.25rem rgba(250 36 60 / 25%);
+    }
+  }
+
+  .container-cards {
+    vertical-align: baseline;
+    grid-gap: 3rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+    grid-template-rows: 1fr;
+    overflow-y: hidden;
+    width: 100%;
+    padding: 0.5rem 3rem 3rem 3rem;
+  }
+
+  .card {
+    background-color: rgba(255,255,255,0.92) !important;
+    border-radius: 1rem !important;
+  }
+
+  .card-img-top {
+    border-radius: 1rem 1rem 0 0 !important;
+  }
+
+  .cart-title-customized {
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    text-align: center;
+    max-width: 80%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    margin: auto;
+    color: #1d1d1f;
+  }
+
+  .card {
+    position:relative;
+    top: 0;
+    transition: all .2s ease-in-out;
+
+    &:hover {
+      box-shadow:0 0 0 0.25rem rgba(250 36 60 / 25%) !important;
+    }
+  }
+
+  .container_form input {
+    padding-left: 1rem;
+    padding-right: 2rem;
+    background-image: url("./assets/images/search.svg");
+    background-size: 1.2rem 1.2rem;
+    background-repeat: no-repeat;
+    background-position: 98% 50%;
+
+    &::-webkit-input-placeholder {
+      color: #C7C7C7;
+    }
+  }
+
+  .container-songs {
+    display: grid;
+    grid-template-columns: 1fr 5fr 1fr 1fr;
+    grid-template-rows: 1fr;
+  }
+
+  .icon-audio {
+    width: 29.86px;
+    height: 29.86px;
+  }
+
+  .border-r-2 {
+    height: 168% !important;
+  }
+
+  .filled-instance {
+    stroke: #fa243c;
+    stroke-width: 5px;
+    fill: lighten(#fa243c, 20%);
+  }
+
+  @media screen and (min-width: 641px) {
+    .input-search {
+      width: 43% !important;
+    }
+  }
+}

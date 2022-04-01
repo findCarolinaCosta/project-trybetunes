@@ -7,16 +7,30 @@ class Cards extends Component {
     const { albumObject: { artistName,
       collectionId, collectionName, artworkUrl100 } } = this.props;
     return (
-      <Link
-        data-testid={ `link-to-album-${collectionId}` }
-        to={ `/album/${collectionId}` }
-      >
-        <img src={ artworkUrl100 } alt={ artistName } />
-        <h1>{ artistName }</h1>
-        <h3>
-          { collectionName }
-        </h3>
-      </Link>
+      <div className="card shadow-lg bg-body w-full">
+        <Link
+          data-testid={ `link-to-album-${collectionId}` }
+          to={ `/album/${collectionId}` }
+          className="text-decoration-none"
+        >
+          <img
+            src={ artworkUrl100 }
+            alt={ artistName }
+            className="card-img-top"
+          />
+          <div className="card-body">
+            <h3 className="card-title cart-title-customized mb-2">
+              { collectionName }
+            </h3>
+            <h1
+              className="card-title cart-title-customized mb-3
+            font-bold text-xl text-muted"
+            >
+              { artistName }
+            </h1>
+          </div>
+        </Link>
+      </div>
     );
   }
 }

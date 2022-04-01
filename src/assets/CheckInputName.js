@@ -1,6 +1,7 @@
-export default function checkInputName() {
-  const { loginuser } = this.state;
+function checkInputName(user) {
   const minimumCharacters = 3;
-  const result = loginuser.length < minimumCharacters;
+  const result = user.length < minimumCharacters;
   return result;
 }
+
+export default checkInputName;
