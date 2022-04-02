@@ -1,21 +1,12 @@
 import PropTypes from 'prop-types';
-import React, { useContext, useEffect } from 'react';
+import React, { useContext } from 'react';
 import Header from '../Components/Header';
 import profileIcon from '../assets/images/profile-icon.svg';
 import { Context } from '../context/ContextInfos';
 
 function Profile(props) {
   const { history } = props;
-  const { user, setUser } = useContext(Context);
-  const userStore = JSON.parse(localStorage.getItem('user'));
-
-  useEffect(() => !user.userName && userStore.userName && setUser({
-    userName: userStore.userName,
-    email: userStore.email,
-    description: userStore.description,
-    Image: userStore.image,
-  }), [setUser, user.userName,
-    userStore.description, userStore.email, userStore.image, userStore.userName]);
+  const { user } = useContext(Context);
 
   return (
     <div data-testid="page-profile">
@@ -37,11 +28,11 @@ function Profile(props) {
           </button>
         </div>
         <h4 className="font-bold">Nome</h4>
-        <p className="text-muted">{user.userName || undefined}</p>
+        <p className="text-muted">{user.userName}</p>
         <h4 className="font-bold">E-mail</h4>
-        <p className="text-muted">{user.email || undefined}</p>
+        <p className="text-muted">{user.email}</p>
         <h4 className="font-bold">Descrição</h4>
-        <p className="text-muted">{user.description || undefined}</p>
+        <p className="text-muted">{user.description}</p>
       </section>
     </div>
   );

@@ -1,21 +1,15 @@
 import PropTypes from 'prop-types';
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useState } from 'react';
 import Header from '../Components/Header';
 import { Context } from '../context/ContextInfos';
 
 function ProfileEdit(props) {
   const { history } = props;
   const { setUser } = useContext(Context);
-  const [userName, setUserName] = useState('');
-  const [email, setEmail] = useState('');
-  const [description, setDescription] = useState('');
   const userStore = JSON.parse(localStorage.getItem('user'));
-
-  useEffect(() => ((
-    userStore.userName && setUserName(userStore.userName),
-    userStore.email && setEmail(userStore.email),
-    userStore.description && setDescription(userStore.description)
-  )), [userStore.description, userStore.email, userStore.userName]);
+  const [userName, setUserName] = useState(userStore.userName || '');
+  const [email, setEmail] = useState(userStore.email || '');
+  const [description, setDescription] = useState(userStore.description || '');
 
   const handleClick = () => {
     const userInfos = {
