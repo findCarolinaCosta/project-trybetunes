@@ -2,7 +2,7 @@ import { createUser } from '../services/userAPI';
 
 async function entryCondition(e, user) {
   e.preventDefault();
-  await createUser({ name: user });
+  await createUser({ userName: user });
 }
 
 export default entryCondition;

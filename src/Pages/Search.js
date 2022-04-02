@@ -4,12 +4,12 @@ import Header from '../Components/Header';
 import getArtistInfos from '../assets/GetArtistInfos';
 import Loading from './LoadingMessage';
 import RenderAlbuns from '../Components/RenderAlbuns';
-import { AlbumContext } from '../context/album';
+import { Context } from '../context/ContextInfos';
 import { getSearchValue } from '../redux/actions';
 
 function Search(props) {
   const { searchValue, setPromiseResolve,
-    setAlbumList, setSearchValue } = useContext(AlbumContext);
+    setAlbumList, setSearchValue } = useContext(Context);
   const dispatch = useDispatch();
 
   const [isloading, setIsLoading] = useState(false);
