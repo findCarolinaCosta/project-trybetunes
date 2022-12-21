@@ -14,16 +14,24 @@ function MusicCard({ param }) {
   const audio = useMemo(() => new Audio(url), [url]);
   const favoritesList = JSON.parse(localStorage.getItem('favorite_songs'));
 
-  useEffect(() => (isPlay ? audio.play()
-    : audio.pause()),
-  [audio, isPlay]);
+  useEffect(() => (isPlay ? audio.play() : audio.pause()), [audio, isPlay]);
+
+  useEffect(() => {
+    audio.addEventListener('ended', () => {
+      setIsPlay(false)
+    });
+  }, [audio]);
 
   const handlePlay = (previewUrl) => {
-    if (isPlay) {
+    if (url === previewUrl) {
+      // If the clicked song is already playing, pause it
+      setIsPlay(!isPlay);
+    } else {
+      // If the clicked song is not playing, stop the current playing song and play the clicked song
       audio.pause();
+      setUrl(previewUrl);
+      setIsPlay(true);
     }
-    setUrl(previewUrl);
-    setIsPlay(!isPlay);
   };
 
   return (!param ? !infosSongs : !favoritesList)

@@ -5,7 +5,7 @@ const Context = createContext();
 const { Provider, Consumer } = Context;
 
 function ContextInfos(props) {
-  const userStore = JSON.parse(localStorage.getItem('user'));
+  const userStore = JSON.parse(localStorage.getItem('user')) || {userName: '', email: '', description: ''};
   const [promiseResolve, setPromiseResolve] = useState(false);
   const [albumList, setAlbumList] = useState([]);
   const [searchValue, setSearchValue] = useState('');
